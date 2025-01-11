@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@internal/opa-universal",
 	"private": true,
 	"workspaces": [
