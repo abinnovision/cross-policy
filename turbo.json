@@ -1,0 +1,28 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build", "generate"],
+			"outputs": ["dist/**"],
+			"inputs": ["src/**", "assets/**", "shims.d.ts"]
+		},
+		"generate": {
+			"inputs": ["src/**/*"],
+			"outputs": ["generated/**/*"],
+			"dependsOn": ["^generate"]
+		},
+		"fix": {
+			"dependsOn": ["format:fix", "lint:fix"]
+		},
+		"check": {
+			"dependsOn": ["format:check", "lint:check"]
+		},
+		"format:fix": {},
+		"format:check": {},
+		"lint:fix": {},
+		"lint:check": {},
+		"//#test-unit": {
+			"inputs": ["src/**/*", "test/**/*"]
+		}
+	}
+}

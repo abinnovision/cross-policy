@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  opa:
+    image: openpolicyagent/opa:1.0.0
+    ports:
+      - "8181:8181"
+    volumes:
+      - ./test/__fixtures__:/policies
+    command:
+      - "run"
+      - "--server"
+      - "--addr=http://0.0.0.0:8181"
+      - "/policies"
