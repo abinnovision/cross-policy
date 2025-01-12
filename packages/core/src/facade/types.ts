@@ -34,6 +34,9 @@ export interface CrossPolicy<I extends Record<string, any>> {
 	 *
 	 * @param input The input to the policy evaluation.
 	 * @returns A promise that resolves to a boolean indicating whether the policy is allowed or not.
+	 * @throws {PolicyTargetEvaluationError} If an error occurs during evaluation.
+	 * @throws {PolicyTargetValidationError} If the input is invalid.
+	 * @throws {PolicyTargetInitError} If the PolicyTarget fails to initialize.
 	 */
 	evaluate: (input: I) => Promise<boolean>;
 }

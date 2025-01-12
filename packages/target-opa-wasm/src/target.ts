@@ -1,3 +1,7 @@
+import {
+	PolicyTargetEvaluationError,
+	PolicyTargetPolicyError,
+} from "@cross-policy/core";
 import * as opa from "@open-policy-agent/opa-wasm";
 import * as fsp from "node:fs/promises";
 
@@ -13,14 +17,10 @@ interface OpaWasmPolicyTargetOptions {
  */
 async function getPolicy(path: string): Promise<opa.LoadedPolicy> {
 	// Decide which policy to use.
-	try {
-		let policyFile: ArrayBuffer;
-		policyFile = await fsp.readFile(path);
+	let policyFile: ArrayBuffer;
+	policyFile = await fsp.readFile(path);
 
-		return await opa.loadPolicy(policyFile);
-	} catch (e) {
-		throw new Error("Failed to load policy file");
-	}
+	return await opa.loadPolicy(policyFile);
 }
 
 /**
@@ -36,20 +36,21 @@ async function evaluatePolicy(
 	try {
 		evaluationResult = policy.evaluate(input);
 	} catch (error) {
-		throw new Error("Failed to evaluate policy");
+		// Generic error when evaluating the policy.
+		throw new PolicyTargetEvaluationError("Failed to evaluate policy", error);
 	}
 
 	let result = evaluationResult[0]?.result;
 
 	// The result must be a boolean. Undefined indicates an invalid policy.
 	if (result === undefined) {
-		throw new Error("Policy did not return a result");
+		throw new PolicyTargetPolicyError("Policy did not return a result");
 	}
 
 	result = result[policyResult ?? "allow"];
 
 	if (result === undefined) {
-		throw new Error("Policy result is undefined");
+		throw new PolicyTargetPolicyError("Policy result is undefined");
 	}
 
 	return result;

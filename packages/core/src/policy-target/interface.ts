@@ -14,6 +14,7 @@ export interface PolicyTarget {
 	 *
 	 * @param context The context of the evaluation.
 	 * @returns A promise that resolves to a boolean indicating whether the policy is allowed or not.
+	 * @throws {PolicyTargetEvaluationError} If an error occurs during evaluation.
 	 */
 	evaluate: (context: PolicyTargetEvaluationContext) => Promise<boolean>;
 }
