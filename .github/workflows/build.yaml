@@ -58,12 +58,32 @@ jobs:
           yarn dedupe
           git diff --exit-code --quiet yarn.lock || (echo "yarn.lock is not up to date, run 'yarn dedupe'" && exit 1)
 
+  test-unit:
+    name: Test (Unit)
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    needs:
+      - configure
+      - check_build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ needs.configure.outputs.commit-sha }}
+      - name: Setup Node.js
+        uses: abinnovision/actions@setup-node-v1
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Test
+        run: yarn turbo test-unit
+
   # Will check if the release is needed and create a release PR if so.
   release:
     name: Release
     needs:
       - configure
       - check_build
+      - test-unit
     uses: abinnovision/workflows/.github/workflows/release-please.yaml@master
     secrets: inherit
     # Only run on push to "main" branch.
