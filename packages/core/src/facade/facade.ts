@@ -1,6 +1,7 @@
 import { initPolicyTarget } from "./utils.js";
 import { PolicyTargetEvaluationError } from "../errors/policy-target-evaluation-error.js";
 import { PolicyTargetInitError } from "../errors/policy-target-init-error.js";
+import { PolicyTargetPolicyError } from "../errors/policy-target-policy-error.js";
 import { PolicyTargetValidationError } from "../errors/policy-target-validation-error.js";
 
 import type { CrossPolicy, CrossPolicyOpts } from "./types.js";
@@ -54,7 +55,10 @@ export const createCrossPolicy = <
 			try {
 				return await target.evaluate({ input: evaluationInput });
 			} catch (err) {
-				if (!(err instanceof PolicyTargetEvaluationError)) {
+				if (
+					!(err instanceof PolicyTargetEvaluationError) &&
+					!(err instanceof PolicyTargetPolicyError)
+				) {
 					throw PolicyTargetEvaluationError.fromCause(err);
 				} else {
 					throw err;
