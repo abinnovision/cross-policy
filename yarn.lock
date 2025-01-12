@@ -69,6 +69,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chevrotain/cst-dts-gen@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@chevrotain/cst-dts-gen@npm:11.0.3"
+  dependencies:
+    "@chevrotain/gast": "npm:11.0.3"
+    "@chevrotain/types": "npm:11.0.3"
+    lodash-es: "npm:4.17.21"
+  checksum: 10/601d23fa3312bd0e32816bd3f9ca2dcba775a52192a082fd6c5e4a2e8ee068523401191babbe2c346d6d2551900a67b549f2f74d7ebb7d5b2ee1b6fa3c8857a0
+  languageName: node
+  linkType: hard
+
+"@chevrotain/gast@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@chevrotain/gast@npm:11.0.3"
+  dependencies:
+    "@chevrotain/types": "npm:11.0.3"
+    lodash-es: "npm:4.17.21"
+  checksum: 10/7169453a8fbfa994e91995523dea09eab87ab23062ad93f6e51f4a3b03f5e2958e0a8b99d5ca6fa067fccfbbbb8bcf1a4573ace2e1b5a455f6956af9eaccb35a
+  languageName: node
+  linkType: hard
+
+"@chevrotain/regexp-to-ast@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@chevrotain/regexp-to-ast@npm:11.0.3"
+  checksum: 10/7387a1c61c5a052de41e1172b33eaaedea166fcdb1ffe4c381b86d00051a8014855a031d28fb658768a62c833ef5f5b0689d0c40de3d7bed556f8fea24396e69
+  languageName: node
+  linkType: hard
+
+"@chevrotain/types@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@chevrotain/types@npm:11.0.3"
+  checksum: 10/49a82b71d2de8ceb2383ff2709fa61d245f2ab2e42790b70c57102c80846edaa318d0b3645aedc904d23ea7bd9be8a58f2397b1341760a15eb5aa95a1336e2a9
+  languageName: node
+  linkType: hard
+
+"@chevrotain/utils@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@chevrotain/utils@npm:11.0.3"
+  checksum: 10/29b5d84373a7761ad055c53e2f540a67b5b56550d5be1c473149f6b8923eef87ff391ce021c06ac7653843b0149f6ff0cf30b5e48c3f825d295eb06a6c517bd3
+  languageName: node
+  linkType: hard
+
 "@commitlint/cli@npm:^19.6.1":
   version: 19.6.1
   resolution: "@commitlint/cli@npm:19.6.1"
@@ -274,6 +316,24 @@ __metadata:
     typescript: "npm:^5.7.2"
     vitest: "npm:^2.1.8"
     zod: "npm:^3.24.1"
+  languageName: unknown
+  linkType: soft
+
+"@cross-policy/target-cel@workspace:packages/target-cel":
+  version: 0.0.0-use.local
+  resolution: "@cross-policy/target-cel@workspace:packages/target-cel"
+  dependencies:
+    "@abinnovision/eslint-config-base": "npm:^2.2.0"
+    "@abinnovision/eslint-config-typescript": "npm:^2.2.1"
+    "@abinnovision/prettier-config": "npm:^2.1.3"
+    "@cross-policy/core": "workspace:^"
+    cel-js: "npm:^0.3.0"
+    eslint: "npm:^9.17.0"
+    globals: "npm:^15.14.0"
+    prettier: "npm:^3.4.2"
+    tsup: "npm:^8.3.5"
+    typescript: "npm:^5.7.2"
+    vitest: "npm:^2.1.8"
   languageName: unknown
   linkType: soft
 
@@ -1601,6 +1661,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cel-js@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "cel-js@npm:0.3.0"
+  dependencies:
+    chevrotain: "npm:11.0.3"
+    ramda: "npm:0.30.0"
+  checksum: 10/783751e73c25d8a2ebfda2a473e3994a6d43e044d31d38368cd29b7d89ae4cb05b2c001aac9ad6eeea57934c5334fac1f8e74e7d987a269f0938b04908f9f9f8
+  languageName: node
+  linkType: hard
+
 "chai@npm:^5.1.2":
   version: 5.1.2
   resolution: "chai@npm:5.1.2"
@@ -1635,6 +1705,20 @@ __metadata:
   version: 2.1.1
   resolution: "check-error@npm:2.1.1"
   checksum: 10/d785ed17b1d4a4796b6e75c765a9a290098cf52ff9728ce0756e8ffd4293d2e419dd30c67200aee34202463b474306913f2fcfaf1890641026d9fc6966fea27a
+  languageName: node
+  linkType: hard
+
+"chevrotain@npm:11.0.3":
+  version: 11.0.3
+  resolution: "chevrotain@npm:11.0.3"
+  dependencies:
+    "@chevrotain/cst-dts-gen": "npm:11.0.3"
+    "@chevrotain/gast": "npm:11.0.3"
+    "@chevrotain/regexp-to-ast": "npm:11.0.3"
+    "@chevrotain/types": "npm:11.0.3"
+    "@chevrotain/utils": "npm:11.0.3"
+    lodash-es: "npm:4.17.21"
+  checksum: 10/8fa6253e51320dd4c3d386315b925734943e509d7954a2cd917746c0604461191bea57b0fb8fbab1903e0508fd94bfd35ebd0f8eace77cd0f3f42a9ee4f8f676
   languageName: node
   linkType: hard
 
@@ -3671,6 +3755,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash-es@npm:4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 10/03f39878ea1e42b3199bd3f478150ab723f93cc8730ad86fec1f2804f4a07c6e30deaac73cad53a88e9c3db33348bb8ceeb274552390e7a75d7849021c02df43
+  languageName: node
+  linkType: hard
+
 "lodash.camelcase@npm:^4.3.0":
   version: 4.3.0
   resolution: "lodash.camelcase@npm:4.3.0"
@@ -4438,6 +4529,13 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10/72900df0616e473e824202113c3df6abae59150dfb73ed13273503127235320e9c8ca4aaaaccfd58cf417c6ca92a6e68ee9a5c3182886ae949a768639b388a7b
+  languageName: node
+  linkType: hard
+
+"ramda@npm:0.30.0":
+  version: 0.30.0
+  resolution: "ramda@npm:0.30.0"
+  checksum: 10/18112bc9328bbbdc7b1e59ad5e548e7636813defe00446a083720d7fe8247df23b9b049348f7a10edeec0d2be6813fc19427a5cff792f6e1404079f4136d75f8
   languageName: node
   linkType: hard
 

@@ -16,11 +16,7 @@ interface OpaWasmPolicyTargetOptions {
  * Provides the policy to use based on the current config.
  */
 async function getPolicy(path: string): Promise<opa.LoadedPolicy> {
-	// Decide which policy to use.
-	let policyFile: ArrayBuffer;
-	policyFile = await fsp.readFile(path);
-
-	return await opa.loadPolicy(policyFile);
+	return await opa.loadPolicy(await fsp.readFile(path));
 }
 
 /**
