@@ -24,7 +24,7 @@ export const createCelPolicyTarget = (
 				const result = evaluate(parsedExpression.cst, ctx.input);
 				if (typeof result !== "boolean") {
 					throw new PolicyTargetPolicyError(
-						"Expression did not evaluate to a boolean",
+						`Expression did not evaluate to a boolean. Result was: ${String(result)}`,
 					);
 				}
 
