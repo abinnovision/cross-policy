@@ -6,6 +6,11 @@
 			"outputs": ["dist/**"],
 			"inputs": ["src/**", "assets/**", "shims.d.ts"]
 		},
+		"generate": {
+			"inputs": ["src/**/*"],
+			"outputs": ["generated/**/*"],
+			"dependsOn": ["^generate"]
+		},
 		"fix": {
 			"dependsOn": ["format:fix", "lint:fix"]
 		},
