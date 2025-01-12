@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@cross-policy/target-opa-wasm",
+	"version": "0.0.0",
+	"type": "module",
+	"repository": {
+		"url": "https://github.com/abinnovision/js-commons"
+	},
+	"license": "Apache-2.0",
+	"author": {
+		"name": "AB INNOVISION GmbH",
+		"email": "info@abinnovision.com",
+		"url": "https://abinnovision.com/"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "tsc & tsup",
+		"format:check": "prettier --check 'src/**/*.{ts,js}' '**/*.{md,json,json5,yaml,yml}'",
+		"format:fix": "prettier --write 'src/**/*.{ts,js}' '**/*.{md,json,json5,yaml,yml}'",
+		"lint:check": "eslint 'src/**/*.{ts,js}'",
+		"lint:fix": "eslint --fix 'src/**/*.{ts,js}'",
+		"test-unit": "vitest --run --coverage",
+		"test-unit:watch": "vitest"
+	},
+	"lint-staged": {
+		"src/**/*.{ts,js}": [
+			"prettier --write",
+			"eslint --fix"
+		],
+		"{**/*,*}.{md,json,json5,yaml,yml}": [
+			"prettier --write"
+		]
+	},
+	"prettier": "@abinnovision/prettier-config",
+	"devDependencies": {
+		"@abinnovision/eslint-config-base": "^2.2.0",
+		"@abinnovision/eslint-config-typescript": "^2.2.1",
+		"@abinnovision/prettier-config": "^2.1.3",
+		"eslint": "^9.17.0",
+		"globals": "^15.14.0",
+		"prettier": "^3.4.2",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.2",
+		"vitest": "^2.1.8"
+	},
+	"dependencies": {
+		"@cross-policy/core": "workspace:^",
+		"@open-policy-agent/opa-wasm": "^1.10.0"
+	}
+}
