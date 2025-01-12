@@ -1,4 +1,5 @@
 import { initPolicyTarget } from "./utils.js";
+import { PolicyTargetEvaluationError } from "../errors/policy-target-evaluation-error.js";
 import { PolicyTargetInitError } from "../errors/policy-target-init-error.js";
 import { PolicyTargetValidationError } from "../errors/policy-target-validation-error.js";
 
@@ -29,13 +30,11 @@ export const createCrossPolicy = <
 				try {
 					target = await initPolicyTarget(opts.target);
 				} catch (err) {
-					// Handle initialize errors.
-					// We generally don't expect the PolicyTargetFactory to throw the PolicyTargetInitError type,
-					// therefore, we always wrap it.
-					throw new PolicyTargetInitError(
-						"Failed to initialize PolicyTarget",
-						err,
-					);
+					if (!(err instanceof PolicyTargetInitError)) {
+						throw PolicyTargetInitError.fromCause(err);
+					} else {
+						throw err;
+					}
 				}
 			}
 
@@ -44,7 +43,7 @@ export const createCrossPolicy = <
 				// Validate the input against the schema.
 				parsedInput = await opts.schema.parseAsync(input);
 			} catch (err) {
-				throw new PolicyTargetValidationError("Invalid input", err);
+				throw PolicyTargetValidationError.fromCause(err);
 			}
 
 			let evaluationInput = parsedInput;
@@ -52,7 +51,15 @@ export const createCrossPolicy = <
 				evaluationInput = opts.extendInput({ input });
 			}
 
-			return await target.evaluate({ input: evaluationInput });
+			try {
+				return await target.evaluate({ input: evaluationInput });
+			} catch (err) {
+				if (!(err instanceof PolicyTargetEvaluationError)) {
+					throw PolicyTargetEvaluationError.fromCause(err);
+				} else {
+					throw err;
+				}
+			}
 		},
 	};
 };

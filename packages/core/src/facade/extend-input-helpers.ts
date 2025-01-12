@@ -18,11 +18,8 @@ import type { z } from "zod";
  *   extendInput: withStaticInput({ bar: "baz" }),
  * });
  */
-export const withStaticInput = <
-	S extends z.SomeZodObject,
-	I extends Record<string, any>,
->(
-	staticInput: I,
-): ExtendInputFunction<S, I> => {
-	return ({ input }) => ({ ...input, ...staticInput });
-};
+export const withStaticInput =
+	<S extends z.SomeZodObject, I extends Record<string, any>>(
+		staticInput: I,
+	): ExtendInputFunction<S, I> =>
+	({ input }) => ({ ...input, ...staticInput });

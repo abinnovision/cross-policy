@@ -1,22 +1,14 @@
 import {
+	buildPolicyTarget,
 	PolicyTargetEvaluationError,
 	PolicyTargetPolicyError,
 } from "@cross-policy/core";
 import * as opa from "@open-policy-agent/opa-wasm";
 import * as fsp from "node:fs/promises";
 
-import type { PolicyTargetFactory } from "@cross-policy/core";
-
 interface OpaWasmPolicyTargetOptions {
 	policyPath: string;
 	policyResult?: string;
-}
-
-/**
- * Provides the policy to use based on the current config.
- */
-async function getPolicy(path: string): Promise<opa.LoadedPolicy> {
-	return await opa.loadPolicy(await fsp.readFile(path));
 }
 
 /**
@@ -52,17 +44,15 @@ async function evaluatePolicy(
 	return result;
 }
 
-export const createOpaWasmPolicyTarget = (
-	opts: OpaWasmPolicyTargetOptions,
-): PolicyTargetFactory => {
-	return async () => {
-		const policy = await getPolicy(opts.policyPath);
-
-		return {
-			name: "opa-wasm",
-			evaluate: async (ctx) => {
-				return await evaluatePolicy(policy, opts.policyResult, ctx.input);
-			},
+export const opaWasmPolicyTarget = buildPolicyTarget({
+	name: "opa-wasm",
+	init: async (opts: OpaWasmPolicyTargetOptions) => ({
+		policy: await opa.loadPolicy(await fsp.readFile(opts.policyPath)),
+		policyResult: opts.policyResult,
+	}),
+	createEvaluate: (data) => {
+		return async (ctx) => {
+			return await evaluatePolicy(data.policy, data.policyResult, ctx.input);
 		};
-	};
-};
+	},
+});
