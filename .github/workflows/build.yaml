@@ -138,10 +138,6 @@ jobs:
       - name: Publish
         run: |
           echo '${{ needs.release.outputs.paths_released }}' | jq -cr '.[]' | while read path; do
-            # Publish to GitHub Packages
-            yarn config set -H --json npmScopes '{"abinnovision": {"npmPublishRegistry": "https://npm.pkg.github.com", "npmRegistryServer": "https://npm.pkg.github.com", "npmAuthToken": "${{ secrets.GITHUB_TOKEN }}"}}'
-            yarn --cwd "$path" npm publish
-
             # Publish to NPM
             yarn config set -H --json npmScopes '{"abinnovision": {"npmPublishRegistry": "https://registry.npmjs.org", "npmRegistryServer": "https://registry.npmjs.org", "npmAuthToken": "${{ secrets.NPM_AUTH_TOKEN }}"}}'
             yarn --cwd "$path" npm publish --access public
