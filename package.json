@@ -14,7 +14,8 @@
 		"format:fix": "prettier --write '{*,.github/**/*}.{md,json,json5,yaml,yml}'",
 		"postinstall": "husky install",
 		"sort:check": "sort-package-json '{packages}/**!(node_modules)/package.json' 'package.json' --check",
-		"sort:fix": "sort-package-json '{packages}/**!(node_modules)/package.json' 'package.json'"
+		"sort:fix": "sort-package-json '{packages}/**!(node_modules)/package.json' 'package.json'",
+		"test-unit": "vitest --run --coverage --project \\*#unit"
 	},
 	"commitlint": {
 		"extends": [
@@ -34,13 +35,15 @@
 		"@abinnovision/commitlint-config": "^2.2.1",
 		"@abinnovision/prettier-config": "^2.1.3",
 		"@commitlint/cli": "^19.6.1",
+		"@vitest/coverage-v8": "^2.1.8",
 		"concurrently": "^9.1.2",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.3.0",
 		"prettier": "^3.4.2",
 		"rimraf": "^6.0.1",
 		"sort-package-json": "^2.12.0",
-		"turbo": "^2.3.3"
+		"turbo": "^2.3.3",
+		"vitest": "^2.1.8"
 	},
 	"packageManager": "yarn@4.6.0"
 }

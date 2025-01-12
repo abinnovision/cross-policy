@@ -21,8 +21,7 @@
 		"format:check": {},
 		"lint:fix": {},
 		"lint:check": {},
-		"test-unit": {
-			"dependsOn": ["generate", "^build"],
+		"//#test-unit": {
 			"inputs": ["src/**/*", "test/**/*"]
 		}
 	}

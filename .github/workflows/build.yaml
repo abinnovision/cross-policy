@@ -75,7 +75,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Test
-        run: yarn turbo test-unit
+        run: yarn test-unit
 
   # Will check if the release is needed and create a release PR if so.
   release:

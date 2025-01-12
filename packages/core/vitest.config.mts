@@ -2,6 +2,7 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
 	test: {
+		name: "@cross-policy/core#unit",
 		include: ["src/**/*.spec.ts"],
 		environment: "node",
 		coverage: {
