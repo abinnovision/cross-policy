@@ -15,6 +15,7 @@
 		"postinstall": "husky install",
 		"sort:check": "sort-package-json '{packages}/**!(node_modules)/package.json' 'package.json' --check",
 		"sort:fix": "sort-package-json '{packages}/**!(node_modules)/package.json' 'package.json'",
+		"test-integration": "vitest --run --coverage --project \\*#integration",
 		"test-unit": "vitest --run --coverage --project \\*#unit"
 	},
 	"commitlint": {
