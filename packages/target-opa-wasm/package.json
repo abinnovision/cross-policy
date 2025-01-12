@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@cross-policy/target-opa-wasm",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
 	"repository": {
 		"url": "https://github.com/abinnovision/js-commons"

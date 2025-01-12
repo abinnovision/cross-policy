@@ -1,6 +1,6 @@
 {
-	"packages/core": "0.0.0",
-	"packages/target-cel": "0.0.0",
-	"packages/target-opa-rest": "0.0.0",
-	"packages/target-opa-wasm": "0.0.0"
+	"packages/core": "1.0.0",
+	"packages/target-cel": "1.0.0",
+	"packages/target-opa-rest": "1.0.0",
+	"packages/target-opa-wasm": "1.0.0"
 }
