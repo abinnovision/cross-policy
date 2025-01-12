@@ -3,6 +3,9 @@
 	"changelog-path": "CHANGELOG.md",
 	"release-type": "node",
 	"packages": {
-		"packages/core": {}
+		"packages/core": {},
+		"packages/target-cel": {},
+		"packages/target-opa-rest": {},
+		"packages/target-opa-wasm": {}
 	}
 }
