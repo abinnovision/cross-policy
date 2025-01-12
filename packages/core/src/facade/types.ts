@@ -4,9 +4,21 @@ import type {
 } from "../policy-target/index.js";
 import type { z } from "zod";
 
+interface ExtendInputContext<S extends z.SomeZodObject> {
+	input: z.infer<S>;
+}
+
+type ExtendInputFunction<
+	S extends z.SomeZodObject,
+	I extends Record<string, any>,
+> = (ctx: ExtendInputContext<S>) => I;
+
+/**
+ * Options for creating a CrossPolicy with the facade.
+ */
 export interface CrossPolicyOpts<
-	I extends z.SomeZodObject,
-	S extends Record<string, any> = never,
+	S extends z.SomeZodObject,
+	I extends Record<string, any> = z.infer<S>,
 > {
 	/**
 	 * The target to evaluate against.
@@ -16,13 +28,12 @@ export interface CrossPolicyOpts<
 	/**
 	 * Defines the schema of the input.
 	 */
-	schema: I;
+	schema: S;
 
 	/**
-	 * Defines the static input which will be added to every evaluation.
-	 * This can be used to define configuration options for the policy.
+	 * Extends the input using a function.
 	 */
-	createStaticInput?: S | (() => S);
+	extendInput?: ExtendInputFunction<S, I>;
 }
 
 /**

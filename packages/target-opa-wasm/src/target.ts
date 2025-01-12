@@ -61,12 +61,7 @@ export const createOpaWasmPolicyTarget = (
 		return {
 			name: "opa-wasm",
 			evaluate: async (ctx) => {
-				const input = {
-					input: ctx.input,
-					static: ctx.staticInput ?? {},
-				};
-
-				return await evaluatePolicy(policy, opts.policyResult, input);
+				return await evaluatePolicy(policy, opts.policyResult, ctx.input);
 			},
 		};
 	};

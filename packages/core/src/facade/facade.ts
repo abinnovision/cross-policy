@@ -22,18 +22,6 @@ export const createCrossPolicy = <
 	// This is lazily initialized when the evaluate method is called.
 	let target: PolicyTarget;
 
-	// Holds the static input.
-	let staticInput: S;
-
-	// Try to build the static input if it's available.
-	if (opts.createStaticInput) {
-		if (typeof opts.createStaticInput === "function") {
-			staticInput = opts.createStaticInput();
-		} else {
-			staticInput = opts.createStaticInput;
-		}
-	}
-
 	return {
 		evaluate: async (input: z.infer<I>) => {
 			// Initialize the target if it is not already initialized.
@@ -51,14 +39,20 @@ export const createCrossPolicy = <
 				}
 			}
 
+			let parsedInput;
 			try {
 				// Validate the input against the schema.
-				await opts.schema.parseAsync(input);
+				parsedInput = await opts.schema.parseAsync(input);
 			} catch (err) {
 				throw new PolicyTargetValidationError("Invalid input", err);
 			}
 
-			return await target.evaluate({ input, staticInput });
+			let evaluationInput = parsedInput;
+			if (opts.extendInput) {
+				evaluationInput = opts.extendInput({ input });
+			}
+
+			return await target.evaluate({ input: evaluationInput });
 		},
 	};
 };

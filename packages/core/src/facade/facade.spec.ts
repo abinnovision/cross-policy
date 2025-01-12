@@ -56,14 +56,13 @@ describe("facade/facade", () => {
 		const crossPolicy = createCrossPolicy({
 			target: asyncDummyPolicyTarget,
 			schema: z.object({ foo: z.string() }),
-			createStaticInput: () => ({ bar: "baz" }),
+			extendInput: ({ input }) => ({ ...input, bar: "baz" }),
 		});
 
 		await crossPolicy.evaluate({ foo: "bar" });
 
 		expect(evaluateFn).toHaveBeenCalledWith({
-			input: { foo: "bar" },
-			staticInput: { bar: "baz" },
+			input: { foo: "bar", bar: "baz" },
 		});
 	});
 
@@ -71,14 +70,13 @@ describe("facade/facade", () => {
 		const crossPolicy = createCrossPolicy({
 			target: syncDummyPolicyTarget,
 			schema: z.object({ foo: z.string() }),
-			createStaticInput: { bar: "baz" },
+			extendInput: ({ input }) => ({ ...input, bar: "baz" }),
 		});
 
 		await crossPolicy.evaluate({ foo: "bar" });
 
 		expect(evaluateFn).toHaveBeenCalledWith({
-			input: { foo: "bar" },
-			staticInput: { bar: "baz" },
+			input: { foo: "bar", bar: "baz" },
 		});
 	});
 });

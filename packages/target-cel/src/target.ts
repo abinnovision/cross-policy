@@ -21,12 +21,7 @@ export const createCelPolicyTarget = (
 		return {
 			name: "opa-wasm",
 			evaluate: async (ctx) => {
-				const input = {
-					input: ctx.input,
-					static: ctx.staticInput ?? {},
-				};
-
-				const result = evaluate(parsedExpression.cst, input);
+				const result = evaluate(parsedExpression.cst, ctx.input);
 				if (typeof result !== "boolean") {
 					throw new PolicyTargetPolicyError(
 						"Expression did not evaluate to a boolean",
