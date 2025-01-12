@@ -74,6 +74,8 @@ jobs:
         uses: abinnovision/actions@setup-node-v1
       - name: Install dependencies
         run: yarn install --immutable
+      - name: Build
+        run: yarn run build
       - name: Test
         run: yarn test-unit
 
