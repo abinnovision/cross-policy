@@ -1,11 +1,11 @@
 # Contains different utility checks for Pull Requests.
 name: PR Utils
 
-# Only apply to PRs which target 'master' branch.
+# Only apply to PRs which target 'main' branch.
 on:
   pull_request:
     branches:
-      - master
+      - main
     types:
       - opened
       - edited
