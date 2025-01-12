@@ -106,6 +106,7 @@ jobs:
       - configure
       - check_build
       - test-unit
+      - test-integration
     uses: abinnovision/workflows/.github/workflows/release-please.yaml@master
     secrets: inherit
     # Only run on push to "main" branch.
