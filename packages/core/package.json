@@ -4,7 +4,7 @@
 	"version": "0.1.0",
 	"type": "module",
 	"repository": {
-		"url": "https://github.com/abinnovision/js-commons"
+		"url": "https://github.com/abinnovision/cross-policy"
 	},
 	"license": "Apache-2.0",
 	"author": {
