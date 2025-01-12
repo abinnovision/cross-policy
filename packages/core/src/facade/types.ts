@@ -4,11 +4,11 @@ import type {
 } from "../policy-target/index.js";
 import type { z } from "zod";
 
-interface ExtendInputContext<S extends z.SomeZodObject> {
+export interface ExtendInputContext<S extends z.SomeZodObject> {
 	input: z.infer<S>;
 }
 
-type ExtendInputFunction<
+export type ExtendInputFunction<
 	S extends z.SomeZodObject,
 	I extends Record<string, any>,
 > = (ctx: ExtendInputContext<S>) => I;
