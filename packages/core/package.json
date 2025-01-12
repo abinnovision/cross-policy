@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
-	"name": "@opa-universal/core",
+	"name": "@cross-policy/core",
 	"version": "0.0.0",
 	"type": "module",
 	"repository": {
@@ -14,9 +14,9 @@
 	},
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.cjs",
-			"types": "./dist/index.d.ts"
+			"require": "./dist/index.cjs"
 		}
 	},
 	"main": "./dist/index.cjs",
@@ -26,11 +26,13 @@
 		"dist/"
 	],
 	"scripts": {
-		"build": "tsup src/index.ts --dts --format esm,cjs --clean",
+		"build": "tsc & tsup",
 		"format:check": "prettier --check 'src/**/*.{ts,js}' '**/*.{md,json,json5,yaml,yml}'",
 		"format:fix": "prettier --write 'src/**/*.{ts,js}' '**/*.{md,json,json5,yaml,yml}'",
 		"lint:check": "eslint 'src/**/*.{ts,js}'",
-		"lint:fix": "eslint --fix 'src/**/*.{ts,js}'"
+		"lint:fix": "eslint --fix 'src/**/*.{ts,js}'",
+		"test-unit": "vitest --run --coverage",
+		"test-unit:watch": "vitest"
 	},
 	"lint-staged": {
 		"src/**/*.{ts,js}": [
@@ -50,6 +52,10 @@
 		"globals": "^15.14.0",
 		"prettier": "^3.4.2",
 		"tsup": "^8.3.5",
-		"typescript": "^5.7.2"
+		"typescript": "^5.7.2",
+		"vitest": "^2.1.8"
+	},
+	"dependencies": {
+		"zod": "^3.24.1"
 	}
 }

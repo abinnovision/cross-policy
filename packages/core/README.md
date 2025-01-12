@@ -1,1 +1,1 @@
-# @opa-universal/core
+# @cross-policy/core
