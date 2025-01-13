@@ -26,6 +26,13 @@ To install the library, run the following command:
 yarn add cross-policy
 ```
 
+For our usage examples, we will use the OPA WASM policy target. To install the
+OPA WASM target, run the following command:
+
+```bash
+yarn add @cross-policy/target-opa-wasm
+```
+
 ### Usage
 
 To create a callable policy, you need to create a `CrossPolicy` instance.
@@ -57,11 +64,8 @@ This is just a collection of policy targets which are included in this
 repository:
 
 - [**Open Policy Agent (OPA) with WASM:**](packages/target-opa-wasm) Evaluate
-  policies using the OPA WASM
-  runtime.
+  policies using the OPA WASM runtime.
 - [**Open Policy Agent (OPA) with REST API:**](packages/target-opa-rest)
-  Evaluate policies using the OPA
-  REST API.
+  Evaluate policies using the OPA REST API.
 - [**Common Expression Language (CEL):**](packages/target-cel) Evaluate policies
-  using the CEL (cel-js)
-  library.
+  using the CEL ([cel-js](https://www.npmjs.com/package/cel-js)) library.
