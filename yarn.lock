@@ -402,7 +402,7 @@ __metadata:
     eslint: "npm:^9.17.0"
     globals: "npm:^15.14.0"
     prettier: "npm:^3.4.2"
-    testcontainers: "npm:^10.16.0"
+    testcontainers: "npm:^10.17.1"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.7.2"
     vitest: "npm:^2.1.8"
@@ -6144,9 +6144,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"testcontainers@npm:^10.16.0":
-  version: 10.16.0
-  resolution: "testcontainers@npm:10.16.0"
+"testcontainers@npm:^10.17.1":
+  version: 10.17.1
+  resolution: "testcontainers@npm:10.17.1"
   dependencies:
     "@balena/dockerignore": "npm:^1.0.2"
     "@types/dockerode": "npm:^3.3.29"
@@ -6163,7 +6163,7 @@ __metadata:
     tar-fs: "npm:^3.0.6"
     tmp: "npm:^0.2.3"
     undici: "npm:^5.28.4"
-  checksum: 10/f8cea696ae5011fde11f3b735c9b93ac00fdbefbcc35dce75ad9e74a03b1a8ba5854c0529f2cdcc584f6f3bfec5c8af6f329c41b6c9b2f9af4e616f58de02554
+  checksum: 10/efcf41b2acfd448b177f6787adeefc4b8817b55182f90dc7fa11b70c71714493a9928fc17e193dec1f8823dc97a5e19f5f8438827406ebb3f9b6014cf79b1109
   languageName: node
   linkType: hard
 
