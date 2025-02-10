@@ -2,14 +2,20 @@ import type {
 	PolicyTarget,
 	PolicyTargetFactory,
 } from "../policy-target/index.js";
-import type { z } from "zod";
+import type { StandardSchemaV1 } from "@standard-schema/spec";
 
-export interface ExtendInputContext<S extends z.SomeZodObject> {
-	input: z.infer<S>;
+/**
+ * Describes the schema type for a CrossPolicy.
+ * This is a StandardSchemaV1 schema, which restricts the output to a record.
+ */
+export type CrossPolicySchema = StandardSchemaV1<any, Record<string, any>>;
+
+export interface ExtendInputContext<S extends CrossPolicySchema> {
+	input: StandardSchemaV1.InferOutput<S>;
 }
 
 export type ExtendInputFunction<
-	S extends z.SomeZodObject,
+	S extends CrossPolicySchema,
 	I extends Record<string, any>,
 > = (ctx: ExtendInputContext<S>) => I;
 
@@ -17,8 +23,8 @@ export type ExtendInputFunction<
  * Options for creating a CrossPolicy with the facade.
  */
 export interface CrossPolicyOpts<
-	S extends z.SomeZodObject,
-	I extends Record<string, any> = z.infer<S>,
+	S extends CrossPolicySchema,
+	I extends Record<string, any> = StandardSchemaV1.InferInput<S>,
 > {
 	/**
 	 * The target to evaluate against.
