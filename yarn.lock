@@ -61,6 +61,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ark/schema@npm:0.39.0":
+  version: 0.39.0
+  resolution: "@ark/schema@npm:0.39.0"
+  dependencies:
+    "@ark/util": "npm:0.39.0"
+  checksum: 10/2bc554c839eb22854825405f655deb9b67b260a8f0dea835f0383b4d18648c6b61301ca19b0c3afaf9b2972a60b9cbcb751ea480cdac3559a1bba385ae7622ee
+  languageName: node
+  linkType: hard
+
+"@ark/util@npm:0.39.0":
+  version: 0.39.0
+  resolution: "@ark/util@npm:0.39.0"
+  checksum: 10/8d23fe93080c8c80ebace149b6a416d9bb68212c102704c2aee92bf2a8f02dc7787a08e4bc283636ef4a0877052f70f5a14c6ead873aa626911db53250d7d525
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0":
   version: 7.26.2
   resolution: "@babel/code-frame@npm:7.26.2"
@@ -361,14 +377,15 @@ __metadata:
     "@abinnovision/eslint-config-base": "npm:^2.2.0"
     "@abinnovision/eslint-config-typescript": "npm:^2.2.1"
     "@abinnovision/prettier-config": "npm:^2.1.3"
+    "@standard-schema/spec": "npm:^1.0.0"
+    arktype: "npm:^2.0.4"
     eslint: "npm:^9.20.0"
     globals: "npm:^15.14.0"
     prettier: "npm:^3.4.2"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.7.2"
     vitest: "npm:^2.1.8"
-    zod: "npm:^3.0.0"
-    zod-error: "npm:^1.5.0"
+    zod: "npm:^3.24.1"
   languageName: unknown
   linkType: soft
 
@@ -1193,6 +1210,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@standard-schema/spec@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@standard-schema/spec@npm:1.0.0"
+  checksum: 10/aee780cc1431888ca4b9aba9b24ffc8f3073fc083acc105e3951481478a2f4dc957796931b2da9e2d8329584cf211e4542275f188296c1cdff3ed44fd93a8bc8
+  languageName: node
+  linkType: hard
+
 "@types/conventional-commits-parser@npm:^5.0.0":
   version: 5.0.1
   resolution: "@types/conventional-commits-parser@npm:5.0.1"
@@ -1666,6 +1690,16 @@ __metadata:
   version: 2.0.1
   resolution: "argparse@npm:2.0.1"
   checksum: 10/18640244e641a417ec75a9bd38b0b2b6b95af5199aa241b131d4b2fb206f334d7ecc600bd194861610a5579084978bfcbb02baa399dbe442d56d0ae5e60dbaef
+  languageName: node
+  linkType: hard
+
+"arktype@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "arktype@npm:2.0.4"
+  dependencies:
+    "@ark/schema": "npm:0.39.0"
+    "@ark/util": "npm:0.39.0"
+  checksum: 10/6ef348155e53c01813209b51961479023e0eff64ca4242ca39ded8fc1a8e4068a56a049351a1e8eb96d8e59424340e95746824721985c2a4d00cbe4854e2bde4
   languageName: node
   linkType: hard
 
@@ -6959,16 +6993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod-error@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "zod-error@npm:1.5.0"
-  dependencies:
-    zod: "npm:^3.20.2"
-  checksum: 10/56c5cb26b2f1e5669a65182cc069e56c40f98d9388e058364bf788418463364c899646848933d3b421ecc0486da8e8b448d3ae5477f1a3197e2fcd623cfb32ad
-  languageName: node
-  linkType: hard
-
-"zod@npm:^3.0.0, zod@npm:^3.20.2":
+"zod@npm:^3.24.1":
   version: 3.24.1
   resolution: "zod@npm:3.24.1"
   checksum: 10/54e25956495dec22acb9399c168c6ba657ff279801a7fcd0530c414d867f1dcca279335e160af9b138dd70c332e17d548be4bc4d2f7eaf627dead50d914fec27

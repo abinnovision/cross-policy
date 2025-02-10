@@ -1,3 +1,4 @@
+import { type } from "arktype";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 
@@ -77,6 +78,22 @@ describe("facade/facade", () => {
 
 		expect(evaluateFn).toHaveBeenCalledWith({
 			input: { foo: "bar", bar: "baz" },
+		});
+	});
+
+	it("should properly use the output of the schema", async () => {
+		const crossPolicy = createCrossPolicy({
+			target: syncDummyPolicyTarget,
+			schema: type({
+				foo: "string",
+				splitType: type("string").pipe((it) => it.split(",")),
+			}),
+		});
+
+		await crossPolicy.evaluate({ foo: "bar", splitType: "a,b,c" });
+
+		expect(evaluateFn).toHaveBeenCalledWith({
+			input: { foo: "bar", splitType: ["a", "b", "c"] },
 		});
 	});
 });

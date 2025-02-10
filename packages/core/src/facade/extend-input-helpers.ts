@@ -1,5 +1,4 @@
-import type { ExtendInputFunction } from "./types.js";
-import type { z } from "zod";
+import type { CrossPolicySchema, ExtendInputFunction } from "./types.js";
 
 /**
  * Helper function for the {@link CrossPolicyOpts.extendInput} option.
@@ -19,7 +18,7 @@ import type { z } from "zod";
  * });
  */
 export const withStaticInput =
-	<S extends z.SomeZodObject, I extends Record<string, any>>(
+	<S extends CrossPolicySchema, I extends Record<string, any>>(
 		staticInput: I,
 	): ExtendInputFunction<S, I> =>
 	({ input }) => ({ ...input, ...staticInput });

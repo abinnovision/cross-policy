@@ -4,9 +4,13 @@ import { PolicyTargetInitError } from "../errors/policy-target-init-error.js";
 import { PolicyTargetPolicyError } from "../errors/policy-target-policy-error.js";
 import { PolicyTargetValidationError } from "../errors/policy-target-validation-error.js";
 
-import type { CrossPolicy, CrossPolicyOpts } from "./types.js";
+import type {
+	CrossPolicy,
+	CrossPolicyOpts,
+	CrossPolicySchema,
+} from "./types.js";
 import type { PolicyTarget } from "../policy-target/index.js";
-import type { z } from "zod";
+import type { StandardSchemaV1 } from "@standard-schema/spec";
 
 /**
  * Creates a callable policy.
@@ -15,17 +19,17 @@ import type { z } from "zod";
  * @returns The callable policy.
  */
 export const createCrossPolicy = <
-	I extends z.SomeZodObject,
+	I extends CrossPolicySchema,
 	S extends Record<string, any> = never,
 >(
 	opts: CrossPolicyOpts<I, S>,
-): CrossPolicy<z.infer<I>> => {
+): CrossPolicy<StandardSchemaV1.InferInput<I>> => {
 	// Holds the initialized target.
 	// This is lazily initialized when the evaluate method is called.
 	let target: PolicyTarget;
 
 	return {
-		evaluate: async (input: z.infer<I>) => {
+		evaluate: async (input: StandardSchemaV1.InferInput<I>) => {
 			// Initialize the target if it is not already initialized.
 			if (!target) {
 				try {
@@ -39,17 +43,24 @@ export const createCrossPolicy = <
 				}
 			}
 
-			let parsedInput;
+			// Parse the given input using the schema and use the result of the validation.
+			// It's possible that the schema transforms the input.
+			let parseResult;
 			try {
 				// Validate the input against the schema.
-				parsedInput = await opts.schema.parseAsync(input);
+				parseResult = await opts.schema["~standard"].validate(input);
 			} catch (err) {
 				throw PolicyTargetValidationError.fromCause(err);
 			}
 
-			let evaluationInput = parsedInput;
+			// If there are issues, throw an error.
+			if (parseResult.issues) {
+				throw PolicyTargetValidationError.fromSchemaIssues(parseResult.issues);
+			}
+
+			let evaluationInput = parseResult.value;
 			if (opts.extendInput) {
-				evaluationInput = opts.extendInput({ input });
+				evaluationInput = opts.extendInput({ input: evaluationInput });
 			}
 
 			try {
