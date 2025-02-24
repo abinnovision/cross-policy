@@ -397,7 +397,7 @@ __metadata:
     "@abinnovision/eslint-config-typescript": "npm:^2.2.1"
     "@abinnovision/prettier-config": "npm:^2.1.3"
     "@cross-policy/core": "workspace:^"
-    cel-js: "npm:^0.3.0"
+    cel-js: "npm:^0.3.1"
     eslint: "npm:^9.20.1"
     globals: "npm:^15.14.0"
     prettier: "npm:^3.5.1"
@@ -2056,13 +2056,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cel-js@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "cel-js@npm:0.3.0"
+"cel-js@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "cel-js@npm:0.3.1"
   dependencies:
     chevrotain: "npm:11.0.3"
     ramda: "npm:0.30.0"
-  checksum: 10/783751e73c25d8a2ebfda2a473e3994a6d43e044d31d38368cd29b7d89ae4cb05b2c001aac9ad6eeea57934c5334fac1f8e74e7d987a269f0938b04908f9f9f8
+  checksum: 10/10dee5175fa9e3c6cf1165977fe3c99008f1f163967aaa91854cc549658e572ea182cfc5c5c3272a385c196c82fb6861306e4dd9564dabdb3fd66f7cc6f6d96e
   languageName: node
   linkType: hard
 
