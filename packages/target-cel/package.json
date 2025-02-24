@@ -59,6 +59,6 @@
 	},
 	"dependencies": {
 		"@cross-policy/core": "workspace:^",
-		"cel-js": "^0.3.0"
+		"cel-js": "^0.3.1"
 	}
 }
