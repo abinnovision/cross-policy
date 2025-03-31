@@ -61,19 +61,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ark/schema@npm:0.45.2":
-  version: 0.45.2
-  resolution: "@ark/schema@npm:0.45.2"
+"@ark/schema@npm:0.45.5":
+  version: 0.45.5
+  resolution: "@ark/schema@npm:0.45.5"
   dependencies:
-    "@ark/util": "npm:0.45.2"
-  checksum: 10/70427f5c04da68651a3ed0eab2be585fc52608e9d2cbec0fd581330dc252bcee4cd60b8fc55beaa0668b6180b7318496a008955399dfa2c0fdf41a77143b50cd
+    "@ark/util": "npm:0.45.5"
+  checksum: 10/8d9201a6538af419a4dbc959c6a3e990581647a3209f254a4ae908ef7b74766e3ff3c7a8a65730c7fb399148b6d2e257f3cedacb9c5e4839fd18052456259e83
   languageName: node
   linkType: hard
 
-"@ark/util@npm:0.45.2":
-  version: 0.45.2
-  resolution: "@ark/util@npm:0.45.2"
-  checksum: 10/f1114b65f2c631b04fa03f0b7479850bc3ae6fdc4a9aa1975662d0b0c038ac8dbb7cb556f1c52816db187b10c0a987baf75a8e1f36fcc0471988c028f6f3a18b
+"@ark/util@npm:0.45.5":
+  version: 0.45.5
+  resolution: "@ark/util@npm:0.45.5"
+  checksum: 10/ff6f2ac80055ed240f5be4b37354e3c7914cb798caa22f48e3a2cc1204bbca837fd75a3851a942e7919b1c735cd1b3e182e39c29d2886136a8964a8d83609dea
   languageName: node
   linkType: hard
 
@@ -378,7 +378,7 @@ __metadata:
     "@abinnovision/eslint-config-typescript": "npm:^2.2.1"
     "@abinnovision/prettier-config": "npm:^2.1.3"
     "@standard-schema/spec": "npm:^1.0.0"
-    arktype: "npm:^2.1.12"
+    arktype: "npm:^2.1.15"
     eslint: "npm:^9.23.0"
     globals: "npm:^15.14.0"
     prettier: "npm:^3.5.3"
@@ -1691,13 +1691,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"arktype@npm:^2.1.12":
-  version: 2.1.12
-  resolution: "arktype@npm:2.1.12"
+"arktype@npm:^2.1.15":
+  version: 2.1.15
+  resolution: "arktype@npm:2.1.15"
   dependencies:
-    "@ark/schema": "npm:0.45.2"
-    "@ark/util": "npm:0.45.2"
-  checksum: 10/1c253459bd1ace341effa92490fe8a9432f208518ec2f138fe2d436a3e629cc90196f31fb47570e86e98dd572c78c27d6b8fe474c82ccfc164b7722771c3d92e
+    "@ark/schema": "npm:0.45.5"
+    "@ark/util": "npm:0.45.5"
+  checksum: 10/75924335bda99697479d14c1b6fdf4df8f6c880453427e0564568c7c9044cb69e6754f7ac082b6bb0ee67e834ef423b6e8355859fad655ab0bce355676c38d04
   languageName: node
   linkType: hard
 
