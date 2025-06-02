@@ -57,7 +57,7 @@
 		"tsup": "^8.3.5",
 		"typescript": "^5.8.3",
 		"vitest": "^2.1.8",
-		"zod": "^3.25.28"
+		"zod": "^3.25.48"
 	},
 	"dependencies": {
 		"@standard-schema/spec": "^1.0.0"
