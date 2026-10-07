@@ -58,10 +58,15 @@
 		"testcontainers": "^10.21.0",
 		"tsup": "^8.3.5",
 		"typescript": "^5.8.3",
-		"vitest": "^2.1.8"
+		"vitest": "^2.1.8",
+		"zod": "^3.25.56"
 	},
 	"dependencies": {
 		"@cross-policy/core": "workspace:^",
 		"@open-policy-agent/opa-wasm": "^1.10.0"
+	},
+	"publishConfig": {
+		"npm": true,
+		"npmAccess": "public"
 	}
 }
