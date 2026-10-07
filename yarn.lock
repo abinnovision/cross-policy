@@ -404,6 +404,7 @@ __metadata:
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.8.3"
     vitest: "npm:^2.1.8"
+    zod: "npm:^3.25.56"
   languageName: unknown
   linkType: soft
 
@@ -423,6 +424,7 @@ __metadata:
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.8.3"
     vitest: "npm:^2.1.8"
+    zod: "npm:^3.25.56"
   languageName: unknown
   linkType: soft
 
@@ -441,6 +443,7 @@ __metadata:
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.8.3"
     vitest: "npm:^2.1.8"
+    zod: "npm:^3.25.56"
   languageName: unknown
   linkType: soft
 
