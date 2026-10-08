@@ -380,7 +380,7 @@ __metadata:
     "@standard-schema/spec": "npm:^1.0.0"
     arktype: "npm:^2.2.7"
     eslint: "npm:^9.28.0"
-    globals: "npm:^16.1.0"
+    globals: "npm:^17.13.0"
     prettier: "npm:^3.5.3"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.8.3"
@@ -399,7 +399,7 @@ __metadata:
     "@cross-policy/core": "workspace:^"
     cel-js: "npm:^0.7.1"
     eslint: "npm:^9.28.0"
-    globals: "npm:^16.1.0"
+    globals: "npm:^17.13.0"
     prettier: "npm:^3.5.3"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.8.3"
@@ -418,7 +418,7 @@ __metadata:
     "@cross-policy/core": "workspace:^"
     "@open-policy-agent/opa-wasm": "npm:^1.10.0"
     eslint: "npm:^9.28.0"
-    globals: "npm:^16.1.0"
+    globals: "npm:^17.13.0"
     prettier: "npm:^3.5.3"
     testcontainers: "npm:^10.21.0"
     tsup: "npm:^8.3.5"
@@ -438,7 +438,7 @@ __metadata:
     "@cross-policy/core": "workspace:^"
     "@open-policy-agent/opa-wasm": "npm:^1.10.0"
     eslint: "npm:^9.28.0"
-    globals: "npm:^16.1.0"
+    globals: "npm:^17.13.0"
     prettier: "npm:^3.5.3"
     tsup: "npm:^8.3.5"
     typescript: "npm:^5.8.3"
@@ -3576,10 +3576,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^16.1.0":
-  version: 16.1.0
-  resolution: "globals@npm:16.1.0"
-  checksum: 10/b24fa86c9d9e7f452572977105cefa66529ac166faf1d81abe6618e0ccce98cdd32f8cbc25d37ed6c2dbe7936b00d442696fd0c96da4c90567490488ecefb8fa
+"globals@npm:^17.13.0":
+  version: 17.13.0
+  resolution: "globals@npm:17.13.0"
+  checksum: 10/f723714cfb07bcf3163d44661d63b2a6076d93fd2f3724622b22084c62bcbbdb3ea3c601ec39635f1430d5cdf60bbf6fd7e458f12b5381ed422ed355c699537b
   languageName: node
   linkType: hard
 
