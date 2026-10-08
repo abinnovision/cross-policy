@@ -60,7 +60,7 @@
 	},
 	"dependencies": {
 		"@cross-policy/core": "workspace:^",
-		"cel-js": "^0.7.1"
+		"cel-js": "^0.8.2"
 	},
 	"publishConfig": {
 		"npm": true,
