@@ -2,21 +2,21 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 10
   cacheKey: 10
 
 "@abinnovision/commitlint-config@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@abinnovision/commitlint-config@npm:2.2.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40abinnovision%2Fcommitlint-config%2F2.2.1%2Fbdfa9998e16598cdcbb4b97f897646ae12bb73ac"
+  version: 2.3.1
+  resolution: "@abinnovision/commitlint-config@npm:2.3.1"
   dependencies:
-    "@commitlint/config-conventional": "npm:^19.5.0"
-  checksum: 10/252ab10355f16bf834cf1a8507b6527d87e707b7ecefb6e61d5f7e6d6db5a0f84a2d4829736668f8f3e0b43eb6582ba07ed945e508b6cad35d3f5fe95188d00c
+    "@commitlint/config-conventional": "npm:^21.2.0"
+  checksum: 10/db211a34c4ba3dd0f3290c0ec3b48982ea2c877107bd2a5d455d1d9d6c774b48b207419ada2aea502a7ddbe0423a4d3d738a7bd6e101b7fb0c072f8c47332010
   languageName: node
   linkType: hard
 
 "@abinnovision/eslint-config-base@npm:^2.2.0":
   version: 2.2.0
-  resolution: "@abinnovision/eslint-config-base@npm:2.2.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40abinnovision%2Feslint-config-base%2F2.2.0%2Ffe30d2a31faebfa5847c484657514b0a1ed81bfa"
+  resolution: "@abinnovision/eslint-config-base@npm:2.2.0"
   dependencies:
     eslint-config-alloy: "npm:^5.1.2"
     eslint-plugin-import: "npm:^2.31.0"
@@ -29,7 +29,7 @@ __metadata:
 
 "@abinnovision/eslint-config-typescript@npm:^2.2.1":
   version: 2.2.1
-  resolution: "@abinnovision/eslint-config-typescript@npm:2.2.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40abinnovision%2Feslint-config-typescript%2F2.2.1%2F51ae50a09bedbf79226739dc6fc5abda028fc139"
+  resolution: "@abinnovision/eslint-config-typescript@npm:2.2.1"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^8.18.0"
     "@typescript-eslint/parser": "npm:^8.18.0"
@@ -41,13 +41,13 @@ __metadata:
   linkType: hard
 
 "@abinnovision/prettier-config@npm:^2.1.3":
-  version: 2.1.3
-  resolution: "@abinnovision/prettier-config@npm:2.1.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40abinnovision%2Fprettier-config%2F2.1.3%2Feb71e15732830490368bfd48b1cc3eff40c5d5bf"
+  version: 2.2.0
+  resolution: "@abinnovision/prettier-config@npm:2.2.0"
   peerDependencies:
     prettier: ^2.4.0 || ^3.0.0
   bin:
     sync-editorconfig: ./dist/bin/sync-editorconfig.cjs
-  checksum: 10/0255d0666ead1022e08953e3e32a605f30efd8f3c9d7a5e4cc471fd45a4ee1d216c5060a4ddbd97f73968dd067da0cba59df1a2047d981e4dc1ca1c41e9fc4b1
+  checksum: 10/b61e3279f7a533628dd2b0eca1226c5398385f8b864d87b05166a371ffd91bac2d3776073aa664ae89b0732a0a8caad4243e247454733edd87216666c71d4872
   languageName: node
   linkType: hard
 
@@ -196,13 +196,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^19.5.0":
-  version: 19.6.0
-  resolution: "@commitlint/config-conventional@npm:19.6.0"
+"@commitlint/config-conventional@npm:^21.2.0":
+  version: 21.2.3
+  resolution: "@commitlint/config-conventional@npm:21.2.3"
   dependencies:
-    "@commitlint/types": "npm:^19.5.0"
-    conventional-changelog-conventionalcommits: "npm:^7.0.2"
-  checksum: 10/f96f6706502edad60d275f62a4aac06993a5fd47c343ad6286d48f173941e4e0848dab6642559099cc6714b513197338ac24da4b07debead5371326eef87bcb8
+    "@commitlint/types": "npm:^21.2.3"
+    conventional-changelog-conventionalcommits: "npm:^10.0.0"
+  checksum: 10/1aaade67cc0222439d49ecdee48bd83c1df6caf82a2385782f0a1ea319dad79c00b811806e3d4fcb7742c70dbc7dc1c6691244cd97920e243ca44255768a40e7
   languageName: node
   linkType: hard
 
@@ -367,6 +367,23 @@ __metadata:
     "@types/conventional-commits-parser": "npm:^5.0.0"
     chalk: "npm:^5.3.0"
   checksum: 10/a26f33ec6987d7d93bdbd7e1b177cfac30ca056ea383faf343c6a09c0441aa057a24be1459c3d4e7e91edd2ecf8d6c4dd670948c9d22646d64767137c6db098a
+  languageName: node
+  linkType: hard
+
+"@commitlint/types@npm:^21.2.3":
+  version: 21.2.3
+  resolution: "@commitlint/types@npm:21.2.3"
+  dependencies:
+    conventional-commits-parser: "npm:^7.0.0"
+    picocolors: "npm:^1.1.1"
+  checksum: 10/0485e8e3d3507f2feb5376d0c9e965c035d5a5da6c6701de41ddddb80c88c3a0b17b40e77b91927d5e09b368dd4b403f8b98311c09f36ff1ab86c7a61b17c2f0
+  languageName: node
+  linkType: hard
+
+"@conventional-changelog/template@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@conventional-changelog/template@npm:1.4.0"
+  checksum: 10/dac527b0eb01ff4b2457b560f3fb61e24c8797cd5e7cafe4d4561454352714d8aec4d39092a15da068fc082878b1713a589cfd8471267f340f9a78c28057d74b
   languageName: node
   linkType: hard
 
@@ -1211,6 +1228,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@simple-libs/stream-utils@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@simple-libs/stream-utils@npm:2.0.0"
+  checksum: 10/012fddda038a0657e62ae2cbb4f89c9ac56d0d2c611b695695ddaabf70cfc9c5207e6b88a9cb3497b9ff05fc74fbe75296cb70f1d1cf9c015efff197b06ee481
+  languageName: node
+  linkType: hard
+
 "@standard-schema/spec@npm:^1.1.0":
   version: 1.1.0
   resolution: "@standard-schema/spec@npm:1.1.0"
@@ -1691,6 +1715,13 @@ __metadata:
   version: 2.0.1
   resolution: "argparse@npm:2.0.1"
   checksum: 10/18640244e641a417ec75a9bd38b0b2b6b95af5199aa241b131d4b2fb206f334d7ecc600bd194861610a5579084978bfcbb02baa399dbe442d56d0ae5e60dbaef
+  languageName: node
+  linkType: hard
+
+"argue-cli@npm:^3.1.0":
+  version: 3.2.0
+  resolution: "argue-cli@npm:3.2.0"
+  checksum: 10/eedd1936b6b63cf05264841d968e5f0cea3a11a743788463a7a4a93418f50ea8e89bba73ad2da2f07ae2829c7f493ff41691d6d14111ddd28f606c4445a60a12
   languageName: node
   linkType: hard
 
@@ -2282,12 +2313,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "conventional-changelog-conventionalcommits@npm:7.0.2"
+"conventional-changelog-conventionalcommits@npm:^10.0.0":
+  version: 10.4.1
+  resolution: "conventional-changelog-conventionalcommits@npm:10.4.1"
   dependencies:
-    compare-func: "npm:^2.0.0"
-  checksum: 10/3cc6586ac57cc54c0595b28ae22e8b674c970034bad35e467f71aba395278a6ef43351cfbf782a5fc33eb13ed4ad843a145b89ad1444f5fa571e3bf9c1d5519b
+    "@conventional-changelog/template": "npm:^1.4.0"
+  checksum: 10/87e4e726b1f34bf56227bfc2b4c156a287ff858d6c47cdf418ac20d5cd2813ef13b18cb7a01628813e4f354df36179213dad321401d61897feeb27c7db1e358a
   languageName: node
   linkType: hard
 
@@ -2302,6 +2333,18 @@ __metadata:
   bin:
     conventional-commits-parser: cli.mjs
   checksum: 10/3b56a9313127f18c56b7fc0fdb0c49d2184ec18e0574e64580a0d5a3c3e0f3eecfb8bc3131dce967bfe9fd27debd5f42b7fc1f09e8e541e688e1dd2b57f49278
+  languageName: node
+  linkType: hard
+
+"conventional-commits-parser@npm:^7.0.0":
+  version: 7.1.3
+  resolution: "conventional-commits-parser@npm:7.1.3"
+  dependencies:
+    "@simple-libs/stream-utils": "npm:^2.0.0"
+    argue-cli: "npm:^3.1.0"
+  bin:
+    conventional-commits-parser: ./dist/cli/index.js
+  checksum: 10/82575781aeef045b8cc3fbcc942fcfb308f71003de5fbb157ac4c683694d5faaad3b552074c90259eab21c04920a56cd00a21073f03993ea7296ec4a33f73e89
   languageName: node
   linkType: hard
 
@@ -5411,14 +5454,14 @@ __metadata:
 
 "resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>":
   version: 1.22.10
-  resolution: "resolve@patch:resolve@npm%3A1.22.10#optional!builtin<compat/resolve>::version=1.22.10&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.10#optional!builtin<compat/resolve>::version=1.22.10&hash=9bd1a5"
   dependencies:
     is-core-module: "npm:^2.16.0"
     path-parse: "npm:^1.0.7"
     supports-preserve-symlinks-flag: "npm:^1.0.0"
   bin:
     resolve: bin/resolve
-  checksum: 10/d4d878bfe3702d215ea23e75e0e9caf99468e3db76f5ca100d27ebdc527366fee3877e54bce7d47cc72ca8952fc2782a070d238bfa79a550eeb0082384c3b81a
+  checksum: 10/c202d86f0b7090886c41427c7161c781169fafe20c9389c5feb0bc021a83e29db8f691c02fcd7d9730db2e7de6ef608a45d0e509733e7e54060d64f0e38521a5
   languageName: node
   linkType: hard
 
