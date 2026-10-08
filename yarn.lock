@@ -61,19 +61,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ark/schema@npm:0.45.9":
-  version: 0.45.9
-  resolution: "@ark/schema@npm:0.45.9"
+"@ark/schema@npm:0.56.6":
+  version: 0.56.6
+  resolution: "@ark/schema@npm:0.56.6"
   dependencies:
-    "@ark/util": "npm:0.45.9"
-  checksum: 10/ce0a258791983ad8fe0c69d56770f6a568d013b73ad5d7579a06983f5085727aa32b0e1353d05349464a02eb52c4fa7ae2937c3b9e4023cdfd827ae9566a4774
+    "@ark/util": "npm:0.56.6"
+  checksum: 10/b25217bebaec86a9b6c091c581bf277afc8fb15511eb1c61bbb8655be46d17905a05729e90d7c0bf358b5a35150b1c84d949344a7f34325d065ab78c03a81cba
   languageName: node
   linkType: hard
 
-"@ark/util@npm:0.45.9":
-  version: 0.45.9
-  resolution: "@ark/util@npm:0.45.9"
-  checksum: 10/35e9cca36b698d3fb6b419544c92cba3b9bad2c836060183d6d110bc02e64ceeb9021917f8062ffd6c53bdde65adc5da72924925a5805f5112eaaa2fe44120df
+"@ark/util@npm:0.56.6":
+  version: 0.56.6
+  resolution: "@ark/util@npm:0.56.6"
+  checksum: 10/5089599ae206d3e39ee39cd210e01a9ed11d50142cca4073deefe828f431d22fc24e63c5919ad2c7a358ff96369fba9f3faf1ee5e9d031cc455c2c9dbbe924cc
   languageName: node
   linkType: hard
 
@@ -378,7 +378,7 @@ __metadata:
     "@abinnovision/eslint-config-typescript": "npm:^2.2.1"
     "@abinnovision/prettier-config": "npm:^2.1.3"
     "@standard-schema/spec": "npm:^1.0.0"
-    arktype: "npm:^2.1.19"
+    arktype: "npm:^2.2.7"
     eslint: "npm:^9.28.0"
     globals: "npm:^16.1.0"
     prettier: "npm:^3.5.3"
@@ -1694,13 +1694,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"arktype@npm:^2.1.19":
-  version: 2.1.19
-  resolution: "arktype@npm:2.1.19"
+"arkregex@npm:0.0.12":
+  version: 0.0.12
+  resolution: "arkregex@npm:0.0.12"
   dependencies:
-    "@ark/schema": "npm:0.45.9"
-    "@ark/util": "npm:0.45.9"
-  checksum: 10/efa06fe5f652f205b47255d6602703ddf1051cb222a4ed236791c87cfbc3db397f8d85ea0ed23c072b27afcd70dd5fd67f3de3304b22146b8d030307c89a37b3
+    "@ark/util": "npm:0.56.6"
+  checksum: 10/6d4988d54d87c8b4657375cb2bd111bb5ae99435d30e09caa9a05b353d19faa7f91e7cef2ac875337c9e3bb61c4fea532167ea2770988a5a6a35c387dfeb92c9
+  languageName: node
+  linkType: hard
+
+"arktype@npm:^2.2.7":
+  version: 2.2.7
+  resolution: "arktype@npm:2.2.7"
+  dependencies:
+    "@ark/schema": "npm:0.56.6"
+    "@ark/util": "npm:0.56.6"
+    arkregex: "npm:0.0.12"
+  checksum: 10/76aecb5120ace652a98814b8b23afdc3ea4396efb5671ab4cb4e24a1c9d69a0110c484ca9115e7400fd46f67c6b12e93af92cb487838f28ace1d04975a27de49
   languageName: node
   linkType: hard
 
